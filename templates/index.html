@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC Kelompok 3</title>
+    <!-- Hubungkan file CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Profil Anggota Kelompok 3</h1>
+    {% for profile in profiles %}
+        <div class="profile">
+            <img src="{{ profile.photo }}" alt="Foto {{ profile.name }}">
+            <div>
+                <h2>{{ profile.name }}</h2>
+                <p><strong>NIM:</strong> {{ profile.NIM }}</p>
+                <p><strong>Education:</strong> {{ profile.Education }}</p>
+                <p><strong>Biodata:</strong> {{ profile.bio }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</body>
+</html>
